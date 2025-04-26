@@ -6,7 +6,7 @@ using API.Models;
 public class AppDataContext : DbContext{
 
     public DbSet<Conta> Contas { get; set; }
-    public DbSet<TipoDaConta> TiposDasContas { get; set; } 
+    public DbSet<Tipo> Tipos { get; set; } 
 
 protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -14,10 +14,10 @@ protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     }
 
      protected override void OnModelCreating(ModelBuilder modelBuilder) {
-        modelBuilder.Entity<TipoDaConta>().HasData(
+        modelBuilder.Entity<Tipo>().HasData(
 
-            new TipoDaConta() {Id = 1, Name = "Adulto"},
-            new TipoDaConta() {Id = 2, Name = "Menor de Idade"},
+            new Tipo() {Id = 1, Nome = "Normal", Descricao = "Conta normal sem restrições"},
+            new Tipo() {Id = 2, Nome = "Estudantil", Descricao = "Conta com limite de crédito reduzido"}
             
         );
      }
