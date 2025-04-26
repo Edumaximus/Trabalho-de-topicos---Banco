@@ -1,0 +1,11 @@
+### Lista de tipos de conta
+GET http://localhost:5103/api/tipos
+
+### Criar um novo tipo de conta
+POST  http://localhost:5103/api/tipos
+Content-Type: application/json
+
+{
+    "Nome": "VIP",
+    "Descricao": "Acesso exclusivo ao programa de investimento do banco"
+}

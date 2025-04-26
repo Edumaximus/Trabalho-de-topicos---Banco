@@ -1,0 +1,68 @@
+### Cadastrar Marcos
+POST http://localhost:5103/api/contas
+Content-Type: application/json
+
+{
+    "usuario": "Marcos Pereira",
+    "tipo": {
+        "id": 2
+    }
+}
+
+### Cadastrar Mônica Hartman
+POST http://localhost:5103/api/contas
+Content-Type: application/json
+
+{
+    "usuario": "Mônica Hartman",
+    "tipo": {
+        "id": 1
+    }
+}
+
+### Cadastrar João jovem
+POST http://localhost:5103/api/contas
+Content-Type: application/json
+
+{
+    "usuario": "João da Silva",
+    "tipo": {
+        "id": 2
+    }
+}
+
+### Cadastrar João velho
+POST http://localhost:5103/api/contas
+Content-Type: application/json
+
+{
+    "usuario": "João da Silva",
+    "tipo": {
+        "id": 1
+    }
+}
+
+### Busca um usuário pelo nome - João
+GET http://localhost:5103/api/contas/João da Silva
+
+### Busca um usuário pelo nome - Marcos
+GET http://localhost:5103/api/contas/Marcos Pereira
+
+### Depositar dinheiro na conta do usuário - Marcos - 100 reais
+PUT http://localhost:5103/api/contas/depositar/1
+Content-Type: application/json
+
+{
+    "quantia": 100
+}
+
+### Sacar dinheiro da conta do usuário - Marcos - 50 reais
+PUT http://localhost:5103/api/contas/sacar/1
+Content-Type: application/json
+
+{
+    "quantia": 50
+}
+
+### Remove usuário pelo id
+DELETE http://localhost:5103/api/contas/2
