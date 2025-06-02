@@ -21,8 +21,13 @@ app.MapGet("/api/tipos", ([FromServices] AppDataContext ctx)=>{
 
 //listagem das contas cadastradas
 app.MapGet("/api/conta", ([FromServices] AppDataContext ctx)=>{
-    if(ctx.Contas.Any()){
-        return Results.Ok(ctx.Contas.ToList());
+    
+    var contas = ctx.Contas
+        .Include(c => c.Tipo) // traz também o Tipo junto
+        .ToList();
+    if (ctx.Contas.Any())
+    {
+        return Results.Ok(contas);
     }
     return Results.NotFound();
 });
