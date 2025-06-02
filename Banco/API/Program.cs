@@ -19,15 +19,6 @@ app.MapGet("/api/tipos", ([FromServices] AppDataContext ctx)=>{
     return Results.NotFound();
 });
 
-//listagem das contas cadastradas
-app.MapGet("/api/conta", ([FromServices] AppDataContext ctx)=>{
-    if(ctx.Contas.Any()){
-        return Results.Ok(ctx.Contas.ToList());
-    }
-    return Results.NotFound();
-});
-
-
 //cadastrar novo usuário
 app.MapPost("/api/contas", ([FromBody] Conta conta, [FromServices] AppDataContext ctx) => {
 
