@@ -109,7 +109,7 @@ app.MapPut("/api/contas/depositar/{id}", ([FromRoute] int id, [FromBody] Transac
 });
 
 
-//sacar dinheiro do saldo de um usuário
+/*sacar dinheiro do saldo de um usuário
 app.MapPut("/api/contas/sacar/{id}", ([FromRoute] int id, [FromBody] Transacao transacao, [FromServices] AppDataContext ctx) => {
     Conta? entidade = ctx.Contas.Find(id);
     
@@ -125,4 +125,4 @@ app.MapPut("/api/contas/sacar/{id}", ([FromRoute] int id, [FromBody] Transacao t
 });
 
 
-app.Run();
+app.Run();*/
