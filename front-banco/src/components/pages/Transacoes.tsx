@@ -10,7 +10,7 @@ function Transacoes() {
     function salvar (e: any) {
         e.preventDefault();
         const v = {
-            valor: Number(valor),
+            quantia: Number(valor),
         }
 
         if(id!=null){
@@ -18,10 +18,10 @@ function Transacoes() {
         }
     }
 
-    function alterar(id: String, valor: any) {
+    function alterar(id: String, quantia: any) {
 
-        if (valor >= 0){
-            axios.put(`http://localhost:5103/api/contas/depositar/${id}`, valor)
+        if (valor > 0){
+            axios.put(`http://localhost:5103/api/contas/depositar/${id}`, quantia)
             .then(response => {
             console.log(response);
                 alert("Depósito executado com sucesso.");
@@ -29,10 +29,10 @@ function Transacoes() {
             .catch( error => {
               alert("Ocorreu um erro ao realizar o depósito");
         })
-        }else if (valor = 0){
+        }else if (valor == 0){
             alert ("Por favor selecione um valor maior que zero para depósitos, e um valor menor que zero para saques");
         }else{
-            axios.put(`http://localhost:5103/api/contas/depositar/${id}`, valor)
+            axios.put(`http://localhost:5103/api/contas/depositar/${id}`, quantia)
             .then(response => {
             console.log(response);
                 alert("Saque executado com sucesso.");
@@ -68,7 +68,6 @@ function Transacoes() {
                         type="number"
                         id="valor"
                         step="0.01"
-                        placeholder="Digite o valor da transação"
                         required/>
                 </div>
                 

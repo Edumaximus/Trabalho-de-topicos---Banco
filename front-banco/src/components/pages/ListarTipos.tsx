@@ -13,7 +13,7 @@ function ListarTipos(){
     }, []);
 
     function carregarTipos(){
-        axios.get("hhttp://localhost:5103/api/tipos")
+        axios.get("http://localhost:5103/api/tipos")
         .then(response => {
             setTipos(response.data)
             console.table(response.data);

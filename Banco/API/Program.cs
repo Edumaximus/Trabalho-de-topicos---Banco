@@ -5,6 +5,16 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Add CORS services
+builder.Services.AddCors(options =>
+     options.AddPolicy("Acesso Total",
+         configs => configs
+             .AllowAnyOrigin()
+             .AllowAnyHeader()
+             .AllowAnyMethod())
+);
+
 builder.Services.AddDbContext<AppDataContext>();
 
 builder.Services.AddEndpointsApiExplorer();
@@ -122,7 +132,8 @@ app.MapPut("/api/contas/sacar/{id}", ([FromRoute] int id, [FromBody] Transacao t
     ctx.Contas.Update(entidade);
     ctx.SaveChanges();
     return Results.Ok(entidade);
-});
+});*/
 
+app.UseCors("Acesso Total");
 
-app.Run();*/
+app.Run();

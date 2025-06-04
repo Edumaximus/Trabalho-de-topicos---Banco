@@ -13,7 +13,7 @@ return (
       <BrowserRouter>
               
             <Routes>
-                  <Route path="/" element={<ListarTipos/>}/>
+                  <Route path="/" element={<Transacoes/>}/>
                   <Route path="/pages/ListarTipos" element={<ListarTipos/>}/>
                   <Route path="/pages/CadastrarTipos" element={<CadastrarTipos />}/>
                   <Route path="/pages/Transacoes" element={<Transacoes />}/>
