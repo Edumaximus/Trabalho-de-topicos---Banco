@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 import './ListarTipos.css';
-//import {Tipo} from "../../../models/Tipo";
+import {Tipo} from "../../models/Tipo";
 import { Link } from 'react-router-dom';
 
 function ListarTipos(){
