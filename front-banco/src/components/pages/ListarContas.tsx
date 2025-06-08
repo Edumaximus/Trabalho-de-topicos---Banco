@@ -33,7 +33,7 @@ function ListarContas(){
                         <td>#</td>
                         <td>usuario</td>
                         <td>saldo</td>
-                        <td>tipos</td>
+                        <td>tipo</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,6 +42,7 @@ function ListarContas(){
                             <td>{conta.id}</td>
                             <td>{conta.usuario}</td>
                             <td>{conta.saldo}</td>
+                            <td>{conta.tipo.nome}</td>
                         </tr>
                     ))}
                 </tbody>
