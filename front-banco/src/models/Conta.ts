@@ -1,6 +1,6 @@
 import {Tipo} from "./Tipo";
 
-export interface Produto
+export interface Conta
 {
     id: string;
     usuario: string;
