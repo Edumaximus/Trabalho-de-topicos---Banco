@@ -1,4 +1,4 @@
-//import Header from "./components/Header";
+import Header from "./components/Header";
 import CadastrarTipos from "../src/components/pages/CadastrarTipos";
 import ListarTipos from "../src/components/pages/ListarTipos";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -13,6 +13,7 @@ function App() {
 return (
 <div>
       <BrowserRouter>
+      <Header />
               
             <Routes>
                   <Route path="/" element={<ListarContas/>}/>

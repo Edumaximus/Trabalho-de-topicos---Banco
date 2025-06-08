@@ -1,42 +1,41 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './CadastrarContas.css';
 import { useParams } from 'react-router-dom';
+import { Tipo } from '../../models/Tipo';
 
 function CadastrarContas() {
     const {id} = useParams();
     const [usuario, setUsuario] = useState("");
     const [saldo, setSaldo] = useState(0);
-    /*const [categoriaId, setCategoriaId] = useState<any>();
-    const [categorias, setCategorias] = useState<Categoria[]>([]);*/
+    //const [tipo, setTipo] = useState<Tipo[]>([]);
 
-    /*useEffect(() => {    
+    useEffect(() => {    
 
-        carregarCategorias();
+      // carregarTipos();
     
-    }, []);*/
+    }, []);
 
     function salvar(e: any) {
         e.preventDefault();
         const conta = {
             usuario: usuario,
             saldo: parseFloat(saldo.toString()), 
-            /*categoriaId: categoriaId*/
+            
         };
         cadastrar(conta);
     }
 
-    /*function carregarCategorias() {
-        axios.get("http://localhost:5291/api/categorias")
+   /* function carregarTipos() {
+        axios.get("http://localhost:5291/api/tipos")
         .then( response =>{
-            setCategorias(response.data);
-            setCategoriaId(response.data[0]?.id);
+            setTipo(response.data);
         })
         .catch( () => {
-            alert("Erro ao carregar as categorias");
+            alert("Erro ao carregar os tipos");
         });
-    }*/
-
+    }
+*/
     function cadastrar(conta: any) {
         axios.post("http://localhost:5103/api/contas", conta)
         .then(response => {
@@ -78,20 +77,21 @@ function CadastrarContas() {
                     />
                 </div>
 
-                eu não lembrava como fazer comentário no html
-                <div>
-                    <label htmlFor="categoria">Categoria</label>
-                    <select id="categoria"
-                        onChange={(e: any) => setCategoriaId(e.target.value)}
-                        value={categoriaId} >
-                        {categorias.map( (item) => (
+                esse caralho nao funciona
+
+
+                 <div>
+                    <label htmlFor="tipo">Tipo</label>
+                    <select id="tipo"
+                        onChange={(e: any) => setTipo(e.target.value)}
+                        value={tipo} >
+                        {tipos.map( (item) => (
                             <option key={item.id} value={item.id} >
                                 {item.nome}
                             </option>
                         ))}
                     </select>
-                </div>
-                comentário termina aqui
+               
 
                 <button type="submit">Salvar</button>
             </form>
