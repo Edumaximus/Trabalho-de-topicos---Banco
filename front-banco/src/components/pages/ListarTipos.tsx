@@ -9,10 +9,10 @@ function ListarTipos(){
     const[tipos, setTipos] = useState<Tipo[]>([]);
 
     useEffect(() => {
-        carregarTipos()
+        carregarTiposLista()
     }, []);
 
-    function carregarTipos(){
+    function carregarTiposLista(){
         axios.get("http://localhost:5103/api/tipos")
         .then(response => {
             setTipos(response.data)
