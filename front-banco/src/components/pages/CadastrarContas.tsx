@@ -8,11 +8,12 @@ function CadastrarContas() {
     const {id} = useParams();
     const [usuario, setUsuario] = useState("");
     const [saldo, setSaldo] = useState(0);
-    //const [tipo, setTipo] = useState<Tipo[]>([]);
+    const [tipos, setTipo] = useState<Tipo[]>([]);
+    const [tipoId, setTipoId] = useState<any>();
 
     useEffect(() => {    
 
-      // carregarTipos();
+      carregarTipos();
     
     }, []);
 
@@ -20,22 +21,24 @@ function CadastrarContas() {
         e.preventDefault();
         const conta = {
             usuario: usuario,
-            saldo: parseFloat(saldo.toString()), 
-            
+            tipo:{
+                id: tipoId
+            }
         };
         cadastrar(conta);
     }
 
-   /* function carregarTipos() {
-        axios.get("http://localhost:5291/api/tipos")
+    function carregarTipos() {
+        axios.get("http://localhost:5103/api/tipos")
         .then( response =>{
             setTipo(response.data);
+            setTipoId(response.data[0]?.id);
         })
         .catch( () => {
             alert("Erro ao carregar os tipos");
         });
     }
-*/
+
     function cadastrar(conta: any) {
         axios.post("http://localhost:5103/api/contas", conta)
         .then(response => {
@@ -65,32 +68,17 @@ function CadastrarContas() {
                 </div>
 
                 <div>
-                    <label htmlFor="saldo">Saldo</label>
-                    <input
-                        type="number"
-                        step="0.01"
-                        id="saldo"
-                        value={saldo}
-                        onChange={(e) => setSaldo(Number(e.target.value))}
-                        placeholder="Digite o saldo inicial"
-                        required
-                    />
-                </div>
-
-                esse caralho nao funciona
-
-
-                 <div>
                     <label htmlFor="tipo">Tipo</label>
                     <select id="tipo"
-                        onChange={(e: any) => setTipo(e.target.value)}
-                        value={tipo} >
+                        onChange={(e: any) => setTipoId(e.target.value)}
+                        value={tipoId} >
                         {tipos.map( (item) => (
                             <option key={item.id} value={item.id} >
                                 {item.nome}
                             </option>
                         ))}
                     </select>
+                </div>
                
 
                 <button type="submit">Salvar</button>

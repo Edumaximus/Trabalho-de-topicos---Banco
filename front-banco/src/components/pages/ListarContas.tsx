@@ -25,13 +25,13 @@ function ListarContas(){
 
     return (
         <div>
-            <h1>lista de conta</h1>
+            <h1>Lista de contas</h1>
 
             <table>
                 <thead>
                     <tr>
                         <td>#</td>
-                        <td>usuario</td>
+                        <td>usuário</td>
                         <td>saldo</td>
                         <td>tipo</td>
                     </tr>

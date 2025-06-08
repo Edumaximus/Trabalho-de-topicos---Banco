@@ -9,8 +9,8 @@ function Header() {
                 <div className="logo">banco</div>
                     <ul className="nav-links">
                         <li>
-                            <Link to="/pages/CadastarContas">
-                                cadastro de Contas
+                            <Link to="/pages/CadastrarContas">
+                                Cadastro de Contas
                             </Link>
                         </li>
                         <li>
@@ -25,12 +25,12 @@ function Header() {
                         </li>
                         <li>
                             <Link to="/pages/ListarTipos">
-                                lista de Tipos 
+                                Lista de Tipos 
                             </Link>
                         </li>
                         <li>
                             <Link to="/pages/Transacoes">
-                                Transacoes
+                                Transações
                             </Link>
                         </li>
                     </ul>
