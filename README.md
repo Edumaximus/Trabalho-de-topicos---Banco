@@ -69,7 +69,11 @@ Funcionalidades Principais
 -Transações: Aqui são realizadas operações básicas de saque e depósito, o atendente do banco digita o id do usuário que quer realizar a operação (pode ser checado na lista de contas), e digita o valor da operação, positivo para depósitos, negativo para saques.
 
 Estrutura do Projeto
+
 Banco/: Código da API em C# (.NET 9.0.2)
+
 front-banco/: Aplicação web em TypeScript + Node.js
+
 Banco/Models/: Definição de entidades (Conta, Tipo)
+
 front-banco/src/: Componentes, serviços, estilos
