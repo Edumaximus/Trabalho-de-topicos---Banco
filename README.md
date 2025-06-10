@@ -9,7 +9,7 @@ Requisitos de Sistema
 
 Instruções para Rodar o Projeto
 
-4.1. Clonar o repositório
+4.1. Clonar o repositório:
 executar o seguinte comando dentro do terminal do git:
 git clone https://github.com/Edumaximus/Trabalho-de-topicos---Banco.git
 
