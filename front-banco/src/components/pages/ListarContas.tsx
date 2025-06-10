@@ -23,6 +23,17 @@ function ListarContas(){
         })
     }
 
+    function remover(id:string){
+        axios.delete(`http://localhost:5103/api/contas/${id}`)
+        .then(()=>{
+            alert("Conta removida com sucesso");
+            carregarContas();
+        })
+        .catch(()=>
+            alert("Não foi possivel remover a conta")
+        )
+    }
+
     return (
         <div>
             <h1>Lista de contas</h1>
@@ -34,6 +45,7 @@ function ListarContas(){
                         <td>usuário</td>
                         <td>saldo</td>
                         <td>tipo</td>
+                        <td></td>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,6 +55,7 @@ function ListarContas(){
                             <td>{conta.usuario}</td>
                             <td>{conta.saldo}</td>
                             <td>{conta.tipo.nome}</td>
+                            <button className="remover" onClick={()=>remover(conta.id)}>Remover</button>
                         </tr>
                     ))}
                 </tbody>
